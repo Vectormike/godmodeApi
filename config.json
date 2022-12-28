@@ -1,0 +1,10 @@
+{
+  "mainnet": {
+    "0x83A86adf1a7c56e77d36d585B808052e0a2aAD0e": "960618844441096540",
+    "0x1234567890abcdefghijklmnopqrstuvwxyz": "1000000000"
+  },
+  "rinkeby": {
+    "0x9876543210abcdefghijklmnopqrstuvwxyz": "10000000000",
+    "0x0987654321abcdefghijklmnopqrstuvwxyz": "5000000000"
+  }
+}
