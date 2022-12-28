@@ -28,7 +28,7 @@ describe('EtherIntegrationService', () => {
     );
   });
 
-  describe('getBranches', () => {
+  describe('Wallet Address Validation', () => {
     it('should validate the address and network concurrently and return the result', async () => {
       (validationService.validateAddress as jest.Mock).mockResolvedValue(true);
       (validationService.validateNetwork as jest.Mock).mockResolvedValue(true);
