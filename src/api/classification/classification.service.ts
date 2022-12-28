@@ -6,7 +6,7 @@ import {
   Logger,
 } from '@nestjs/common';
 import { BadRequestException } from '@nestjs/common';
-import { EtherIntegrationService } from 'src/infrastructure/ether/etherIntegration.service';
+import { EtherIntegrationService } from '../../infrastructure/ether/etherIntegration.service';
 import { BigNumber, providers } from 'ethers';
 import { Classification } from './dto/classification-dto';
 
