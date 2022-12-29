@@ -62,6 +62,10 @@ run docker container in development mode
 docker-compose up -d
 ```
 
+### Swagger
+
+[Swagger link](http://localhost:3000/swagger/#/Classification/ClassificationController_Classify)
+
 ## Stay in touch
 
 - Author - [Victor Jonah](https://www.github.com/Vectormike)
