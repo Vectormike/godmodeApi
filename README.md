@@ -20,6 +20,14 @@
 $ npm install
 ```
 
+Set the environment variables:
+
+```
+cp .env.example .env
+
+# open .env and modify the environment variables (if needed)
+```
+
 ## Running the app
 
 ```bash
@@ -44,6 +52,14 @@ $ npm run test:e2e
 
 # test coverage
 $ npm run test:cov
+```
+
+## Docker
+
+run docker container in development mode
+
+```
+docker-compose up -d
 ```
 
 ## Stay in touch
