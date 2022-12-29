@@ -17,7 +17,9 @@ export class EtherValidationService {
     const isValid =
       network === 'mainnet' ||
       network === 'ropsten' ||
-      network === 'Binance Smart Chain';
+      network === 'rinkeby' ||
+      network === 'kovan' ||
+      network === 'goerli';
 
     if (!isValid) {
       throw new BadRequestException('Invalid Network');
