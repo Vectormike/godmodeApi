@@ -43,5 +43,34 @@ describe('EtherIntegrationService', () => {
       );
       expect(validationService.validateNetwork).toHaveBeenCalledWith('mainnet');
     });
+
+    it('should throw an error if the address is invalid', async () => {
+      (validationService.validateAddress as jest.Mock).mockResolvedValue(false);
+      (validationService.validateNetwork as jest.Mock).mockResolvedValue(true);
+
+      await expect(
+        integrationService.validateWallet('invalid-address', 'mainnet'),
+      ).rejects.toThrowError('Invalid address or network');
+    });
+
+    it('should throw an error if the network is invalid', async () => {
+      (validationService.validateAddress as jest.Mock).mockResolvedValue(true);
+      (validationService.validateNetwork as jest.Mock).mockResolvedValue(false);
+
+      await expect(
+        integrationService.validateWallet(
+          '0x0000000000000000000000000000000000000000',
+          'invalid-network',
+        ),
+      ).rejects.toThrowError('Invalid address or network');
+    });
+    it('should throw an error if the address and network are invalid', async () => {
+      (validationService.validateAddress as jest.Mock).mockResolvedValue(false);
+      (validationService.validateNetwork as jest.Mock).mockResolvedValue(false);
+
+      await expect(
+        integrationService.validateWallet('invalid-address', 'invalid-network'),
+      ).rejects.toThrowError('Invalid address or network');
+    });
   });
 });
