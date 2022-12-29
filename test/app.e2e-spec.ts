@@ -26,14 +26,4 @@ describe('Classification', () => {
       .query({ address: '0x0' })
       .expect(HttpStatus.BAD_REQUEST);
   });
-  it('should return one record', () => {
-    jest.setTimeout(10000);
-    return request(app)
-      .get('/classification/classify')
-      .set('accept', 'application/json')
-      .query({ address: '0x0', network: 'mainnet' })
-      .expect(res => {
-        expect(res.body).toHaveLength(1);
-      });
-  });
 });
